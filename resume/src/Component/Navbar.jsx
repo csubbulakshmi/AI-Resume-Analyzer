@@ -167,7 +167,7 @@ function Navbar() {
   </button>
 ) : (
   <Link to="/login" onClick={() => setMenuOpen(false)}>
-    <button className="">
+    <button className="text-white font">
       Login
     </button>
   </Link>
