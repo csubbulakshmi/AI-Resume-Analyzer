@@ -10,10 +10,10 @@ function Footer() {
       {/* WRAPPER */}
       <div className="max-w-7xl mx-auto px-4 md:px-10 lg:px-20 py-10">
 
-        {/* 🔥 SPACE BETWEEN FIX */}
+        {/* SPACE BETWEEN FIX */}
         <div className="flex flex-col md:flex-row md:justify-between gap-10">
 
-          {/* BRAND */}
+          {/* logo and name */}
           <div className="md:w-[32%] flex flex-col">
 
             <img

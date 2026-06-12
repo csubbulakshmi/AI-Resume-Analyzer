@@ -41,9 +41,8 @@ const upload = multer({ storage });
 // supabase import (single time)
 const supabase = require("./supabaseClient");
 
-// =======================
-// 🔵 SIGNUP API
-// =======================
+// SIGNUP API
+
 app.post("/signup", async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -69,9 +68,8 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-// =======================
-// 🔵 LOGIN API
-// =======================
+// LOGIN API
+
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -99,16 +97,16 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// =======================
-// 🟢 TEST ROUTE
-// =======================
+
+// TEST ROUTE
+
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-// =======================
-// 🟢 UPLOAD ROUTE (your original)
-// =======================
+
+// UPLOAD ROUTE 
+
 app.post("/upload", upload.single("resume"), async (req, res) => {
   try {
     if (!req.file) {
@@ -208,9 +206,8 @@ const cleaned = jsonMatch ? jsonMatch[0] : "{}";
   }
 });
 
-// =======================
-// 🚀 START SERVER
-// =======================
+// START SERVER
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

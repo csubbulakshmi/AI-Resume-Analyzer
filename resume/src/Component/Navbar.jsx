@@ -6,7 +6,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  // ✅ check login
+  //check login
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleLogout = () => {
@@ -68,7 +68,7 @@ function Navbar() {
             </Link>
           </li>
 
-          {/* ✅ FIXED HISTORY */}
+          {/* HISTORY */}
           <li>
             <button
               onClick={handleHistoryClick}
@@ -137,9 +137,8 @@ function Navbar() {
               About
             </Link>
 
-            <hr className="border-cyan-900" />
 
-            {/* ✅ FIXED MOBILE HISTORY */}
+            {/* MOBILE HISTORY */}
             <button
               onClick={handleHistoryClick}
               className="text-gray-300 hover:text-cyan-400 text-left"
@@ -147,13 +146,13 @@ function Navbar() {
               History
             </button>
 
-            {!user && (
+<hr className="border-cyan-900" />
+
   <Link to="/signup" onClick={() => setMenuOpen(false)}>
     <button className="text-white font-medium">
       Sign Up
     </button>
   </Link>
-)}
 
             {user ? (
   <button
@@ -167,7 +166,7 @@ function Navbar() {
   </button>
 ) : (
   <Link to="/login" onClick={() => setMenuOpen(false)}>
-    <button className="text-white font">
+    <button className="text-white font-medium">
       Login
     </button>
   </Link>

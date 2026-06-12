@@ -7,9 +7,8 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const [file, setFile] = useState(null);
-  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-const fileInputRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -28,10 +27,10 @@ const fileInputRef = useRef(null);
   fileInputRef.current.click();
 };
 
-  const handleAnalyze = async () => {
+    const handleAnalyze = async () => {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    // 🔒 ONLY ACTION LEVEL PROTECTION
+    // ONLY ACTION LEVEL PROTECTION
     if (!user?.email) {
       alert("Please login first to analyze resume");
       navigate("/login");
@@ -58,10 +57,6 @@ const fileInputRef = useRef(null);
       console.log("Backend response:", res.data);
 
       const analysis = res.data.analysis;
-      const fileUrl = res.data.fileUrl || "";
-
-      setResult(analysis);
-
       navigate("/result", { state: { analysis } });
 
     } catch (err) {

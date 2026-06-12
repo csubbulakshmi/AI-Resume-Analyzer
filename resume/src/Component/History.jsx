@@ -23,7 +23,7 @@ function History() {
     const { data: result, error } = await supabase
       .from("resume_results")
       .select("*")
-      .eq("user_id", user.email)   // ✅ FIXED
+      .eq("user_id", user.email) 
       .order("created_at", { ascending: false });
 
     if (error) {

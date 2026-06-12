@@ -49,19 +49,17 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/result" element={<Result />} />
-            <Route
-  path="/history"
-  element={
-    <ProtectedRoute>
-      <History />
-    </ProtectedRoute>
-  }
-/>
+            <Route path="/history" element={
+                 <ProtectedRoute>
+                 <History />
+                 </ProtectedRoute>
+                 }
+            />
           </Routes>
 
         </div>
 
-        {/* FOOTER (ONLY ONCE) */}
+        {/* FOOTER */}
         <Footer />
 
       </div>

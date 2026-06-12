@@ -71,7 +71,7 @@ function Card() {
 
       </div>
 
-      {/* Divider - space fixed */}
+      {/* Divider */}
       <div className="mx-auto my-6 w-[70%] h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
 
     </div>
