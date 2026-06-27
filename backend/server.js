@@ -178,13 +178,10 @@ const cleaned = jsonMatch ? jsonMatch[0] : "{}";
       analysis = {};
     }
 
-    const fileUrl = `http://localhost:5000/uploads/${req.file.filename}`;
-
     const { error } = await supabase.from("resume_results").insert([
       {
         user_id: req.body.userId || null,
         file_name: req.file.originalname,
-        file_url: fileUrl,
         result: JSON.stringify(analysis),
       },
     ]);
@@ -196,7 +193,6 @@ const cleaned = jsonMatch ? jsonMatch[0] : "{}";
     res.json({
       success: true,
       analysis,
-      fileUrl,
     });
   } catch (error) {
     res.status(500).json({
